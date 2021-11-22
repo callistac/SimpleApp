@@ -15,7 +15,6 @@ EXPOSE 5000
 
 # configuring app
 ENV FLASK_APP=main.py
-ENV FLASK_RUN_PORT=5000
 # Run Flask app
 # Note that we need to make the application externally visible (i.e. from outside the container) by specifying --host=0.0.0.0.
 CMD ["flask", "run", "--host=0.0.0.0"]
