@@ -1,4 +1,5 @@
-FROM ubuntu:20.10
+# FROM ubuntu:20.10
+FROM python:3.8-slim-buster
 
 # installing python and git
 RUN apt-get update && apt-get install -y python3 python3-pip
