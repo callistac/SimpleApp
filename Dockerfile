@@ -11,8 +11,6 @@ WORKDIR /SimpleApp
 # install dependencies
 RUN pip3 install -r requirements.txt
 
-# informs Docker that the container listens on port 5000 at runtime
-EXPOSE 5000
 
 # configuring app
 ENV FLASK_APP=main.py
