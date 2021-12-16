@@ -2,7 +2,7 @@
 FROM python:3.8-slim-buster
 
 # installing python and git
-RUN apt-get update && apt-get install -y python3 python3-pip
+RUN apt-get update 
 RUN apt-get install -y git
 
 RUN git clone https://github.com/callistac/SimpleApp.git
@@ -11,7 +11,7 @@ WORKDIR /SimpleApp
 # install dependencies
 RUN pip3 install -r requirements.txt
 
-
+EXPOSE $PORT
 # configuring app
 ENV FLASK_APP=main.py
 # Run Flask app
