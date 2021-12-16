@@ -7,22 +7,22 @@ steps:
 
   # [START cloudbuild_python_image_yaml]
   # Docker Build
-  - name: 'gcr.io/new-medium-tutorial/github.com/callistac'
+  - name: 'us-central1-docker.pkg.dev/new-medium-tutorial/simple-app'
     args: ['build', '-t', 
            'us-central1-docker.pkg.dev/$PROJECT_ID/SimpleApp/myimage:$SHORT_SHA', '.']
   # [END cloudbuild_python_image_yaml]
 
   # [START cloudbuild_python_push_yaml]
   # Docker push to Google Artifact Registry
-  - name: 'gcr.io/new-medium-tutorial/github.com/callistac'
-    args: ['push',  'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/myimage:$SHORT_SHA']
+  - name: 'us-central1-docker.pkg.dev/new-medium-tutorial/simple-app'
+    args: ['push',  'us-central1-docker.pkg.dev/$PROJECT_ID/SimpleApp/myimage:$SHORT_SHA']
   # [END cloudbuild_python_push_yaml]
   
   # [START cloudbuild_python_deploy_yaml]
   # Deploy to Cloud Run
   - name: google/cloud-sdk
     args: ['gcloud', 'run', 'deploy', 'helloworld', 
-           '--image=us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/myimage:$SHORT_SHA', 
+           '--image=us-central1-docker.pkg.dev/$PROJECT_ID/SimpleApp/myimage:$SHORT_SHA', 
            '--region', 'us-central1', '--platform', 'managed', 
            '--allow-unauthenticated']
   # [END cloudbuild_python_deploy_yaml]
