@@ -7,14 +7,14 @@ steps:
 
   # [START cloudbuild_python_image_yaml]
   # Docker Build
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/new-medium-tutorial/github.com/callistac'
     args: ['build', '-t', 
-           'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/myimage:$SHORT_SHA', '.']
+           'us-central1-docker.pkg.dev/$PROJECT_ID/SimpleApp/myimage:$SHORT_SHA', '.']
   # [END cloudbuild_python_image_yaml]
 
   # [START cloudbuild_python_push_yaml]
   # Docker push to Google Artifact Registry
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/new-medium-tutorial/github.com/callistac'
     args: ['push',  'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/myimage:$SHORT_SHA']
   # [END cloudbuild_python_push_yaml]
   
