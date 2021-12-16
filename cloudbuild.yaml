@@ -27,7 +27,4 @@ steps:
            '--allow-unauthenticated', --port=5000]
   # [END cloudbuild_python_deploy_yaml]
   
-# Store images in Google Artifact Registry
-images:
-  - us-central1-docker.pkg.dev/$PROJECT_ID/simpleappmyimage:$SHORT_SHA
 # [END cloudbuild_python_yaml]
